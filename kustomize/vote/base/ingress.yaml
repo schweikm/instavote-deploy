@@ -6,6 +6,8 @@ metadata:
   namespace: instavote
   labels:
     app: vote
+  annotations:
+    ingress.cilium.io/force-https: disabled
 spec:
   ingressClassName: cilium
   rules:
@@ -13,7 +15,7 @@ spec:
     http:
       paths:
       - path: /
-        pathType: Exact
+        pathType: ImplementationSpecific
         backend:
           service:
             name: vote

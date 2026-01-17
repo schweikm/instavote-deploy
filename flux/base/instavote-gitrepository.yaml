@@ -9,4 +9,4 @@ spec:
   ref:
     branch: main
   timeout: 1m0s
-  url: https://github.com/schweikm/instavote.git
+  url: https://github.com/schweikm/instavote-deploy.git

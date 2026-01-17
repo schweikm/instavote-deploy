@@ -14,4 +14,4 @@ spec:
     targetPort: 80
   selector:
     app: vote
-  type: NodePort
+  type: ClusterIP

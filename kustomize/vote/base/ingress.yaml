@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vote
+  namespace: instavote
+  labels:
+    app: vote
+spec:
+  ingressClassName: cilium
+  rules:
+  - host: vote.pi.turbo.internal
+    http:
+      paths:
+      - path: /
+        pathType: Exact
+        backend:
+          service:
+            name: vote
+            port:
+              number: 80

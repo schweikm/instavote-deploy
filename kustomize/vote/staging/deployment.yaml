@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: vote
+    tier: front
+  name: vote
+spec:
+  template:
+    spec:
+      containers:
+      - name: vote
+        envFrom:
+        - configMapRef:
+            name: vote-options
+            optional: true
